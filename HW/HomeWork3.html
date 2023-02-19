@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeWork3</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@500&display=swap");
+
+      body {
+        font-family: "Dancing Script", cursive;
+      }
+
+      .right {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        padding-left: 20px;
+        background-color: rgb(238, 228, 248);
+        height: 100%;
+        width: 50%;
+      }
+
+      .left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(/mohammadreza-unsplash.jpg);
+        background-size: cover;
+        background-position: center;
+        width: 50%;
+        height: 100%;
+      }
+
+      h1 {
+        text-align: center;
+        font-weight: 600;
+        font-size: 50px;
+        color: blueviolet;
+        margin-bottom: 5px;
+      }
+
+      button {
+        margin: 0 auto;
+        display: block;
+        font-size: 25px;
+        background: rgb(160, 100, 239);
+        color: rgb(26, 11, 64);
+        border: none;
+        padding: 5px 30px;
+        border-radius: 8px;
+        font-family: "Dancing Script", cursive;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="left"></div>
+
+    <div class="right">
+      <h1>Login form</h1>
+
+      <h2>Please enter your credentials</h2>
+
+      <form>
+        <p>
+          <input type="text" placeholder="Enter your login" />
+        </p>
+
+        <p>
+          <input type="password" placeholder="Enter your password" />
+        </p>
+
+        <p>
+          <input type="checkbox" />
+          Yes, I agree the
+          <a href="https://meta.wikimedia.org/wiki/Privacy_policy/ru"
+            >Privacy policy</a
+          >
+        </p>
+
+        <p>
+          <button>Login</button>
+        </p>
+
+      </form>
+
+    </div>
+  </body>
+</html>
