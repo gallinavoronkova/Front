@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+
+      * {
+        margin: 0; /*внешний отсуп - от забора до соседей*/
+        padding: 0; /*внутренний отсуп - от дома до забора*/
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        font-family: "Oxygen", sans-serif;
+        background: rgba(211, 252, 210, 0.935);
+        align-items: center;
+      }
+
+      .calendar {
+        width: 400px;
+        border: none;
+        border-radius: 20px;
+        background: rgb(170, 243, 145);
+        padding: 20px;
+        box-shadow: rgba(2, 80, 8, 0.25) 0px 14px 28px,
+          rgba(28, 86, 30, 0.22) 0px 10px 10px;
+      }
+
+      .calendar__header {
+        display: flex;
+        justify-content: space-between;
+      }
+      .calendar__button {
+        border-radius: 8px;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        font-size: 1rem;
+        background: rgba(211, 252, 210, 0.935);
+        color: black;
+      }
+
+      h3 {
+        padding: 5px;
+        font-size: x-large;
+      }
+
+      .calendar__items {
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap; /* переносит невместившиеся элементы*/
+      }
+
+      .calendar__item {
+        width: calc(100% / 7);
+        aspect-ratio: 1; /*сделали квадраьными*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .text-bold {
+        font-size: large;
+        font-weight: bolder;
+      }
+
+      .text-grey {
+        color: grey;
+      }
+
+      .text-red {
+        color: red;
+      }
+
+      .text-light-red {
+        color: rgba(255, 0, 0, 0.604);
+      }
+
+      .calendar__item--active {
+        background: rgb(71, 205, 26);
+        /* color: rgba(211, 252, 210, 0.935); */
+        border-radius: 40%;
+      }
+
+      .calendar__actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .calendar__action {
+        flex: 1;
+        padding: 10px 0;
+        border-radius: 8px;
+        border: none;
+        font-size: 1rem;
+        background: rgba(211, 252, 210, 0.935);
+      }
+
+      .calendar__action--green {
+        background: rgb(71, 205, 26);
+        color: rgba(211, 252, 210, 0.935);
+      }
+
+      .calendar__item-hovered:hover {
+        background: rgba(211, 252, 210, 0.935); /* при наведени курсора*/
+        border-radius: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calendar">
+      <div class="calendar__header">
+        <div class="calendar__nav">
+          <button class="calendar__button">
+            <i class="las la-angle-double-left"></i>
+          </button>
+          <button class="calendar__button">
+            <i class="las la-angle-left"></i>
+          </button>
+        </div>
+
+        <h3 class="calendar__title">March 2023</h3>
+        <div class="calendar__nav">
+          <button class="calendar__button">
+            <i class="las la-angle-right"></i>
+          </button>
+          <button class="calendar__button">
+            <i class="las la-angle-double-right"></i>
+          </button>
+        </div>
+      </div>
+      <ul class="calendar__items">
+        <li class="calendar__item text-bold">Mo</li>
+        <li class="calendar__item text-bold">Tu</li>
+        <li class="calendar__item text-bold">We</li>
+        <li class="calendar__item text-bold">Th</li>
+        <li class="calendar__item text-bold">Fr</li>
+        <li class="calendar__item text-red text-bold">Sa</li>
+        <li class="calendar__item text-red text-bold">Su</li>
+        <li class="calendar__item text-grey">27</li>
+        <li class="calendar__item text-grey">28</li>
+        <li class="calendar__item calendar__item-hovered">1</li>
+        <li class="calendar__item calendar__item-hovered">2</li>
+        <li class="calendar__item calendar__item-hovered">3</li>
+        <li class="calendar__item calendar__item-hovered text-red">4</li>
+        <li class="calendar__item calendar__item-hovered text-red">5</li>
+        <li
+          class="calendar__item calendar__item-hovered calendar__item--active"
+        >
+          6
+        </li>
+        <li class="calendar__item calendar__item-hovered">7</li>
+        <li class="calendar__item calendar__item-hovered">8</li>
+        <li class="calendar__item calendar__item-hovered">9</li>
+        <li class="calendar__item calendar__item-hovered">10</li>
+        <li class="calendar__item calendar__item-hovered text-red">11</li>
+        <li class="calendar__item calendar__item-hovered text-red">12</li>
+        <li class="calendar__item calendar__item-hovered">13</li>
+        <li class="calendar__item calendar__item-hovered">14</li>
+        <li class="calendar__item calendar__item-hovered">15</li>
+        <li class="calendar__item calendar__item-hovered">16</li>
+        <li class="calendar__item calendar__item-hovered">17</li>
+        <li class="calendar__item calendar__item-hovered text-red">18</li>
+        <li class="calendar__item calendar__item-hovered text-red">19</li>
+        <li class="calendar__item calendar__item-hovered">20</li>
+        <li class="calendar__item calendar__item-hovered">21</li>
+        <li class="calendar__item calendar__item-hovered">22</li>
+        <li class="calendar__item calendar__item-hovered">23</li>
+        <li class="calendar__item calendar__item-hovered">24</li>
+        <li class="calendar__item calendar__item-hovered text-red">25</li>
+        <li class="calendar__item calendar__item-hovered text-red">26</li>
+        <li class="calendar__item calendar__item-hovered">27</li>
+        <li class="calendar__item calendar__item-hovered">28</li>
+        <li class="calendar__item calendar__item-hovered">29</li>
+        <li class="calendar__item calendar__item-hovered">30</li>
+        <li class="calendar__item calendar__item-hovered">31</li>
+        <li class="calendar__item text-light-red">1</li>
+        <li class="calendar__item text-light-red">2</li>
+      </ul>
+
+      <div class="calendar__actions">
+        <button class="calendar__action">Cancel</button>
+        <button class="calendar__action calendar__action--green">Apply</button>
+      </div>
+    </div>
+  </body>
+</html>
