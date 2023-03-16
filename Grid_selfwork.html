@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Own grid</title>
+
+    <style>
+      * {
+        margin: 0;
+      }
+
+      html,
+      body,
+      .container {
+        height: 100%;
+      }
+
+      .header {
+        grid-area: header;
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+      }
+
+      .content {
+        grid-area: content;
+      }
+
+      .news {
+        grid-area: news;
+      }
+
+      .footer {
+        grid-area: footer;
+      }
+      div {
+        background: rgb(213, 163, 247);
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 150px auto 150px;
+        grid-template-rows:15% 70% 15%;
+        gap: 1rem;
+        grid-template-areas:
+          "header header header"
+          "sidebar content news"
+          "sidebar footer footer";
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <div class="header"></div>
+      <div class="sidebar"></div>
+      <div class="content"></div>
+      <div class="news"></div>
+      <div class="footer"></div>
+    </main>
+  </body>
+</html>
