@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW9</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body,
+      .container {
+        height: 100%;
+        background: rgb(181, 232, 28);
+      }
+
+      header {
+        grid-area: header;
+        background: rgb(147, 4, 4);
+      }
+
+      aside {
+        grid-area: aside;
+        background: rgb(147, 4, 4);
+      }
+
+      section {
+        grid-area: section;
+        background: rgb(211, 94, 94);
+      }
+
+      .content1 {
+        grid-area: content1;
+        background: rgb(245, 196, 196);
+      }
+
+      .content2 {
+        grid-area: content2;
+        background: rgb(211, 94, 94);
+      }
+
+      .content3 {
+        grid-area: content3;
+        background: rgb(211, 94, 94);
+      }
+
+      .content4 {
+        grid-area: content4;
+        background: rgb(245, 196, 196);
+      }
+
+      main {
+        grid-area: main;
+        background: rgb(147, 4, 4);
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat (4, auto);
+        grid-template-rows: auto auto auto;
+        gap: 10px;
+        grid-template-areas:
+          "aside header header section"
+          "aside content1 content2 main"
+          "aside content3 content4 main";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header></header>
+      <aside></aside>
+      <section></section>
+      <div class="content1"></div>
+      <div class="content2"></div>
+      <div class="content3"></div>
+      <div class="content4"></div>
+      <main></main>
+    </div>
+  </body>
+</html>
